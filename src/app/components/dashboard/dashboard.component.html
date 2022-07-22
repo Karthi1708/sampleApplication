@@ -1,0 +1,103 @@
+<ion-app>
+    <ion-header class="dashboard-header" [translucent]="true">
+        <ion-grid>
+            <ion-row style="text-align: center; font-size: 20px; margin: 10px 0px;">
+                <ion-col>
+                    <label>Prime</label>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col size="9">
+                    <label>Good Morning Karthik</label>
+                </ion-col>
+                <ion-col size="1.5">
+                    <i class="fa fa-comments-o fa-1-5x" aria-hidden="true"></i>
+                </ion-col>
+                <ion-col size="1.5">
+                    <i class="fa fa-bars fa-1-5x" aria-hidden="true"></i>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-header>
+    <ion-templete>
+
+    </ion-templete>
+    <ion-content class="dashboard">
+        <ion-grid>
+            <ion-row class="dashboard-marginTB">
+                <ion-col class= "dashboard-fontW">
+                    <label>{{profileData.length + ' New Matches'}}</label>
+                    <label class="ion-float-end"> See More </label>
+                </ion-col>
+            </ion-row>
+            <ion-row class=" scroll-items">
+                <ion-col>
+                    <button (click) = "openProfile(data)" *ngFor="let data of profileData; let i = index">
+                        <div>
+                            <img src={{data.image}} />
+                        </div>
+                        <div class="dashboard-name dashboard-fontW">{{data.name}}</div>
+                        <div>{{data.age + ' ' + data.height}}</div>
+                    </button>
+                </ion-col>
+            </ion-row>
+
+            <ion-row class="dashboard-marginTB">
+                <ion-col class= "dashboard-fontW">
+                    <label >{{profileData.length + ' Members Viewed You'}}</label>
+                    <label class="ion-float-end"> See More </label>
+                </ion-col>
+            </ion-row>
+            <ion-row class=" scroll-items">
+                <ion-col>
+                    <button *ngFor="let data of profileData; let i = index" (click) = "openProfile(data)">
+                        <div>
+                            <img src={{data.image}} />
+                        </div>
+                        <div class="dashboard-name dashboard-fontW">{{data.name}}</div>
+                        <div>{{data.age + ' ' + data.height}}</div>
+                    </button>
+                </ion-col>
+            </ion-row>
+
+            <ion-row class="dashboard-marginTB">
+                <ion-col class= "dashboard-fontW">
+                    <label>{{profileData.length + ' Members Shortlisted You'}}</label>
+                    <label class="ion-float-end"> See More </label>
+                </ion-col>
+            </ion-row>
+            <ion-row class="scroll-items">
+                <ion-col>
+                    <button *ngFor="let data of profileData; let i = index" (click) = "openProfile(data)">
+                        <div>
+                            <img src={{data.image}} />
+                        </div>
+                        <div class="dashboard-name dashboard-fontW">{{data.name}}</div>
+                        <div>{{data.age + ' ' + data.height}}</div>
+                    </button>
+                </ion-col>
+            </ion-row>
+
+            <ion-row class="dashboard-marginTB">
+                <ion-col class= "dashboard-fontW">
+                    <label>{{profileData.length + ' Accepted Matches'}}</label>
+                    <label class="ion-float-end"> See More </label>
+                </ion-col>
+            </ion-row>
+            <ion-row class=" scroll-items">
+                <ion-col>
+                    <button *ngFor="let data of profileData; let i = index" (click) = "openProfile(data)">
+                        <div>
+                            <img src={{data.image}} />
+                        </div>
+                        <div class="dashboard-name dashboard-fontW">{{data.name}}</div>
+                        <div>{{data.age + ' ' + data.height}}</div>
+                    </button>
+                </ion-col>
+            </ion-row>
+
+        </ion-grid>
+    </ion-content>
+
+    <app-options></app-options>
+</ion-app>

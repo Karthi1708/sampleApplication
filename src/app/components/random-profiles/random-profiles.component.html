@@ -1,0 +1,98 @@
+<ion-app class="profiles">
+    <ion-header>
+        <button (click)="back()">
+            <i class="fa fa-arrow-left fa-2x" aria-hidden="true"></i>
+            <label>Daily Recommendations</label>
+        </button>
+    </ion-header>
+    <ion-content fullscreen class="profiles-content ion-padding" scroll-y="false">
+        <ion-grid class="profiles-content">
+            <ion-row>
+                <ion-col>
+                    <ion-slides #slides (ionSlideDrag)="onSlideChange($event)">
+                    <!-- <ion-slides #slides pager="true" [options]="slideOpts" (ionSlideDidChange)="onSlideChange($event)"> -->
+                        <ion-slide *ngFor="let profile of profileData; let i = index"
+                            class="profiles-content-insideContent">
+                            <div class="slide profiles-content-imgSize">
+                                <img src={{profile.image}} />
+                            </div>
+                            <ion-row style=" text-align : left ; font-size : 20px; padding: 5px 0px 0px 5px;">
+                                <ion-col style="color: blue;" size="6">
+                                    <i class="fa fa-certificate fa-1-5x" aria-hidden="true"></i>
+                                    <label style="color: blue; padding-left: 5px">Verified</label>
+                                </ion-col>
+                                <ion-col style="color: violet;" size="6">
+                                    <i class="fa fa-star fa-1-5x" aria-hidden="true"></i>
+                                    <label style=" padding-left: 5px">Premium NRI</label>
+                                </ion-col>
+                            </ion-row>
+                            <div
+                                style=" text-align : left ; font-size : 40px; padding: 5px 0px 0px 5px; margin-top : 12px; font-weight: bold;">
+                                <label>{{profile.name}}</label>
+                            </div>
+                            <div
+                                style=" text-align : left ; font-size : 20px; margin-top : 12px; padding: 5px 0px 0px 5px;">
+                                <label>{{profile.age + 'yrs,' + profile.height + ', ' +profile.role + ', ' +
+                                    profile.details + ', ' + profile.location}} </label>
+                            </div>
+                            <ion-row class="profiles-content-shortlist" style=" padding: 10px 0px">
+                                <ion-col class = "till_toggle" size="4">
+                                    <i class="fa fa-star-o fa-1-5x" aria-hidden="true"></i>
+                                    <label style=" padding-left: 5px">Shortlist</label>
+                                </ion-col>
+                                <ion-col size="8">
+                                    <label>Like {{profile.gender === 'male' ? 'Him ? ': 'Her ? '}} <button (click)="nextSlide(i, profile)"> <i class="fa fa-times fa-2x" aria-hidden="true"></i></button>
+                                    <button (click)="nextSlide(i, profile, 'Intrested')"><i class="fa fa-check fa-2x" aria-hidden="true"></i></button>
+                                    </label>
+                                </ion-col>
+                            </ion-row>
+                        </ion-slide>
+
+
+
+                        <!-- <ion-slide class="profiles-content-insideContent">
+                            <div class="slide profiles-content-imgSize">
+                                <img src="assets/slide-11.jpg" />
+                            </div>
+                            <ion-row style=" text-align : left ; font-size : 20px; padding: 5px 0px 0px 5px;">
+                                <ion-col style="color: blue;" size="6">
+                                    <i class="fa fa-certificate fa-1-5x" aria-hidden="true"></i>
+                                    <label style="color: blue; padding-left: 5px">Verified</label>
+                                </ion-col>
+                                <ion-col style="color: violet;" size="6">
+                                    <i class="fa fa-star fa-1-5x" aria-hidden="true"></i>
+                                    <label style=" padding-left: 5px">Premium NRI</label>
+                                </ion-col>
+                            </ion-row>
+                            <div
+                                style=" text-align : left ; font-size : 40px; padding: 5px 0px 0px 5px; margin-top : 12px; font-weight: bold;">
+                                <label>Ramana</label>
+                            </div>
+                            <div
+                                style=" text-align : left ; font-size : 20px; margin-top : 12px; padding: 5px 0px 0px 5px;">
+                                <label>24 yrs, 5 ft 10 in, Software Tester, Mirugasirisham Hindu-Telugu chetty,
+                                    chennai,Tamilnadu</label>
+                            </div>
+                            <ion-row class="profiles-content-shortlist" style=" padding: 10px 0px">
+                                <ion-col size="4">
+                                    <i class="fa fa-star-o fa-1-5x" aria-hidden="true"></i>
+                                    <label style=" padding-left: 5px">Shortlist</label>
+                                </ion-col>
+                                <ion-col size="8">
+                                    <label>Like Her?
+                                        <button>
+                                            <i class="fa fa-times fa-2x" aria-hidden="true"></i>
+                                        </button>
+                                        <button>
+                                            <i class="fa fa-check fa-2x" aria-hidden="true"></i>
+                                        </button>
+                                    </label>
+                                </ion-col>
+                            </ion-row>
+                        </ion-slide> -->
+                    </ion-slides>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-content>
+</ion-app>

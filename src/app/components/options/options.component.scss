@@ -1,0 +1,23 @@
+.options {
+    border-top: 1px solid grey;
+    padding: 0px;
+    --min-height: 30px;
+    div {
+        display: flex;
+        button {
+            margin: 5px;
+            width: 100% !important;
+            height: 45px;
+            border-radius: 5px;
+            background: transparent;
+            label {
+                padding-left: 8px;
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+.fa-1-5x {
+    font-size: 1.5rem;
+}

@@ -1,0 +1,28 @@
+<ion-app class="profiles">
+    <ion-content fullscreen class="profiles-content ion-padding" scroll-y="false">
+        <ion-grid class="profiles-content">
+            <ion-row>
+                <ion-col>
+                    <ion-row style=" text-align : left ; font-size : 20px; padding: 5px 0px 0px 5px;">
+                        <ion-col style="color: blue;" size="6">
+                            <i class="fa fa-certificate fa-1-5x" aria-hidden="true"></i>
+                            <label style="color: blue; padding-left: 5px">Verified</label>
+                        </ion-col>
+                        <ion-col style="color: violet;" size="6">
+                            <i class="fa fa-star fa-1-5x" aria-hidden="true"></i>
+                            <label style=" padding-left: 5px">Premium NRI</label>
+                        </ion-col>
+                    </ion-row>
+                    <div
+                        style=" text-align : left ; font-size : 40px; padding: 5px 0px 0px 5px; margin-top : 12px; font-weight: bold;">
+                        <label>{{profile.name}}</label>
+                    </div>
+                    <div style=" text-align : left ; font-size : 20px; margin-top : 12px; padding: 5px 0px 0px 5px;">
+                        <label>{{profile.age + 'yrs,' + profile.height + ', ' +profile.role + ', ' +
+                            profile.details + ', ' + profile.location}} </label>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-content>
+</ion-app>
