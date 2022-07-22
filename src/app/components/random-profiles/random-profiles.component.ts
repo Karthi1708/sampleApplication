@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { IonSlides, ToastController } from '@ionic/angular';
 import { MessageService } from 'primeng/api';
 import { of } from 'rxjs';
+import { ProfileService } from 'src/app/services/profile.service';
 import Swiper from 'swiper';
 
 @Component({
@@ -12,6 +13,7 @@ import Swiper from 'swiper';
 })
 export class RandomProfilesComponent implements OnInit {
     currentIndex = 0;
+    profileData:any;
     @ViewChild('slides', {static: true}) slides: any;
 
     // slideOpts = {
@@ -119,19 +121,13 @@ export class RandomProfilesComponent implements OnInit {
     //     }
     //   };
     constructor(private router: Router,
-        private toastController: ToastController
+        private toastController: ToastController,
+        private profileSvc: ProfileService
     ) {
     }
 
-    profileData = [{ name: 'Ramana', age: 24, gender: 'male', height: '5 ft 10 in', role: 'Software Tester', details: 'Mirugasirisham Hindu-Telugu chetty', location: 'chennai,Tamilnadu', image: 'assets/slide-11.jpg' },
-    { name: 'Santhosh', age: 24, height: '5 ft 10 in', gender: 'male', role: 'Software Tester', details: 'Mirugasirisham Hindu-Telugu chetty', location: 'chennai,Tamilnadu', image: 'assets/slide-11.jpg' },
-    { name: 'Hari', age: 24, height: '5 ft 10 in', gender: 'male', role: 'Software Tester', details: 'Mirugasirisham Hindu-Telugu chetty', location: 'chennai,Tamilnadu', image: 'assets/slide-11.jpg' },
-    { name: 'Sathish', age: 24, gender: 'male', height: '5 ft 10 in', role: 'Software Tester', details: 'Mirugasirisham Hindu-Telugu chetty', location: 'chennai,Tamilnadu', image: 'assets/slide-11.jpg' },
-    { name: 'Sandy', age: 24, height: '5 ft 10 in', gender: 'male', role: 'Software Tester', details: 'Mirugasirisham Hindu-Telugu chetty', location: 'chennai,Tamilnadu', image: 'assets/slide-11.jpg' },
-    { name: 'Vasanth', age: 24, height: '5 ft 10 in', gender: 'male', role: 'Software Tester', details: 'Mirugasirisham Hindu-Telugu chetty', location: 'chennai,Tamilnadu', image: 'assets/slide-11.jpg' }]
-
     ngOnInit(): void {
-        // this.getSlideOpts();
+        this.profileData = this.profileSvc.getRandomProfileData();
     }
 
     back() {
@@ -152,7 +148,6 @@ export class RandomProfilesComponent implements OnInit {
     onSlideChange(value: any, data?: any) {
         this.slides.getActiveIndex().then((index:number) => {
             this.currentIndex = index;
-            console.log('active', this.currentIndex);
         })
         this.slides.getPreviousIndex().then((index: number) => {
             console.log(index);
@@ -160,7 +155,6 @@ export class RandomProfilesComponent implements OnInit {
             const msg = this.currentIndex === i ? 'Intrested' : '';
             this.presentToast(msg, this.profileData[this.currentIndex]);
             this.profileData.splice(index ,1);
-            console.log('indexindex', index);
             // this.slides.slideTo(1, 500);
             if (this.profileData && !this.profileData.length) {
                 this.router.navigate(['/dashboard'])

@@ -21,6 +21,13 @@ export class ProfileService {
   { name: 'Santhosh', age: 22, height: '1 ft 10 in', gender: 'male', role: 'Software Tester', details: 'Mirugasirisham Hindu-Telugu chetty', location: 'chennai,Tamilnadu', image: 'assets/slide-1.jpg' },
   { name: 'Santhosh', age: 33, height: '8 ft 10 in', gender: 'male', role: 'Software Engineer', details: 'Mirugasirisham Hindu-Telugu chetty', location: 'chennai,Tamilnadu', image: 'assets/slide-1.jpg' }]
 
+  randomProfileData = [{ name: 'Ramana', age: 24, gender: 'male', height: '5 ft 10 in', role: 'Software Tester', details: 'Mirugasirisham Hindu-Telugu chetty', location: 'theni,Tamilnadu', image: 'assets/slide-11.jpg' },
+  { name: 'Santhosh', age: 24, height: '5 ft 10 in', gender: 'male', role: 'Developer', details: 'Mirugasirisham Hindu-Telugu chetty', location: 'chennai,Tamilnadu', image: 'assets/slide-11.jpg' },
+  { name: 'Hari', age: 24, height: '6 ft 10 in', gender: 'male', role: 'Full Stack', details: 'Mirugasirisham Hindu-Telugu chetty', location: 'madurai,Tamilnadu', image: 'assets/slide-11.jpg' },
+  { name: 'Sathish', age: 24, gender: 'male', height: '5 ft 10 in', role: 'Developer', details: 'Mirugasirisham Hindu-Telugu chetty', location: 'vadapalani,Tamilnadu', image: 'assets/slide-11.jpg' },
+  { name: 'Sandy', age: 24, height: '8 ft 10 in', gender: 'male', role: 'Full Stack', details: 'Mirugasirisham Hindu-Telugu chetty', location: 'Thousand lights,Tamilnadu', image: 'assets/slide-11.jpg' },
+  { name: 'Vasanth', age: 24, height: '3 ft 10 in', gender: 'male', role: 'Developer', details: 'Mirugasirisham Hindu-Telugu chetty', location: 'Xyz,Tamilnadu', image: 'assets/slide-11.jpg' }]
+
   constructor() { }
 
   getProfileDetail() {
@@ -37,5 +44,9 @@ export class ProfileService {
 
   getProfileData() {
     return this.profileData;
+  }
+
+  getRandomProfileData() {
+    return this.randomProfileData;
   }
 }

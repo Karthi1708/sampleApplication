@@ -13,13 +13,11 @@ export class ProfileDetailsComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
-    // this.profileSvc.getProfileDetail().subscribe( data :any => this.profile = data);
     this.profileSvc.getProfileDetail().subscribe(
       (data: any) => {
         this.profile = data
       }
     );
-    console.log('this.profile',this.profile);
 
   }
 

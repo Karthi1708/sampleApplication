@@ -70,12 +70,12 @@
 }
 
 .scroll-items {
-    justify-content: flex-start; // changed
+    justify-content: flex-start;
     flex-wrap: nowrap;
     overflow-x: scroll !important;
     overflow-y: hidden;
   }
-  .scroll-items ion-col { // added
+  .scroll-items ion-col {
       display: flex;
       flex-wrap: nowrap;
       button {
